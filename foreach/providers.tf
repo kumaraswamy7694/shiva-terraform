@@ -5,7 +5,22 @@ terraform {
       version = "~> 5.0"
     }
   }
+
+
+  backend "s3" {
+    bucket         = "roboshop-remote-state"
+    key            = "foreach-demo"
+    region         = "us-east-1"
+    dynamodb_table = "roboshop-locking"
+
+
+  }
+
 }
+
+
+
+
 
 # Configure the AWS Provider
 # you can give access and security here but security problem
